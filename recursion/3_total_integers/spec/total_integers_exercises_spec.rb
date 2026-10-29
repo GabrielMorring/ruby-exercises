@@ -27,7 +27,7 @@ RSpec.describe '#total_integers' do
     include_context 'array that should not use flatten'
     let(:test_array) { [1, 2, '3'] }
 
-    xit 'ignores non integer values' do
+    it 'ignores non integer values' do
       expect(total_integers(test_array)).to eq 2
     end
   end
@@ -36,7 +36,7 @@ RSpec.describe '#total_integers' do
     include_context 'array that should not use flatten'
     let(:test_array) { [1.0, 2.5, 0.7] }
 
-    xit 'ignores floating point numbers' do
+    it 'ignores floating point numbers' do
       expect(total_integers(test_array)).to eq 0
     end
   end
@@ -45,7 +45,7 @@ RSpec.describe '#total_integers' do
     include_context 'array that should not use flatten'
     let(:test_array) { [[], [], []] }
 
-    xit 'returns 0' do
+    it 'returns 0' do
       expect(total_integers(test_array)).to eq 0
     end
   end
@@ -54,7 +54,7 @@ RSpec.describe '#total_integers' do
     include_context 'array that should not use flatten'
     let(:test_array) { [[[[[[[[[[[[[[4]]]]]], 246]]]]]]]] }
 
-    xit 'returns 2' do
+    it 'returns 2' do
       expect(total_integers(test_array)).to eq 2
     end
   end
@@ -63,7 +63,7 @@ RSpec.describe '#total_integers' do
     include_context 'array that should not use flatten'
     let(:test_array) { [{}, [555], '444', [nil, 74.0, [4]], [[6]]] }
 
-    xit 'returns 3' do
+    it 'returns 3' do
       expect(total_integers(test_array)).to eq 3
     end
   end

@@ -27,22 +27,22 @@ describe "#contains?" do
     expect(contains?(nested_hash, present_number)).to be true
   end
 
-  xit "returns true if the provided string is a value in the hash" do
+  it "returns true if the provided string is a value in the hash" do
     present_string = "foo"
     expect(contains?(nested_hash, present_string)).to be true
   end
 
-  xit "returns false when the provided string is not a value in the hash" do
+  it "returns false when the provided string is not a value in the hash" do
     absent_string = "bar"
     expect(contains?(nested_hash, absent_string)).to be false
   end
 
-  xit "returns true when looking for a value that is present multiple times" do
+  it "returns true when looking for a value that is present multiple times" do
     duplicated_value = "e"
     expect(contains?(nested_hash, duplicated_value)).to be true
   end
 
-  xit "returns true when the provided value is present and is `nil`" do
+  it "returns true when the provided value is present and is `nil`" do
     expect(contains?(nested_hash, nil)).to be true
   end
 end

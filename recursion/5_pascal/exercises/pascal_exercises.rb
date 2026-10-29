@@ -15,4 +15,16 @@ def pascal(row_number)
   # Your task is to create a *recursive* function, `pascal` - that will take an input `n` and output the `n`th pascal's row as an array of numbers.
   #
   # For example, `pascal(3)` should return `[1, 2, 1]`.
+  return [1] if row_number == 1
+
+  row = [1]
+  prev_row = pascal(row_number - 1)
+  prev_row.each_with_index do |num, index| 
+    next_num = prev_row[index + 1]
+
+    next_num = 0 if next_num == nil
+
+    row.push(num + next_num)
+  end
+  row
 end
